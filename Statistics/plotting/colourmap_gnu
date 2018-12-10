@@ -1,0 +1,23 @@
+set xlabel 'gamma_rand'
+set ylabel 'gamma_att'
+set view map
+set title 'sqrt(<r_sq(t)>/N)~d_fnn for 50 minutes of swimming time(sampl av included , trans time discarded)'
+set xrange [-0.05:0.45]
+set yrange [-0.05:0.55]
+set palette rgbformulae 10,13,33
+set cbrange [0:40]
+set term png size 840,840
+set output 'image.png'
+splot 'root_rsq_N.txt' using 1:2:3 notitle with points palette ps 1 pt 5
+
+set xlabel 'gamma_rand'
+set ylabel 'gamma_att'
+set view map
+set title 'Polarisation(P2) of 50 fish for 50 minutes of swimming time(sampl av included , trans time discarded)'
+set xrange [-0.05:0.45]
+set yrange [-0.05:0.55]
+set palette rgbformulae 10,13,33
+set cbrange [0:1]
+set term png size 840,840
+set output 'image.png'
+splot 'P2.txt' using 1:2:3 notitle with points palette ps 1 pt 5
